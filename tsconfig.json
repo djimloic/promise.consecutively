@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES5",
+    "module": "commonjs",
+    "skipDefaultLibCheck": true,
+    "lib": [
+      "es5",
+      "dom",
+      "es2015.promise",
+      "es2015.collection",
+      "es2015.iterable"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "tmp", "**/*.spec.ts"]
+}

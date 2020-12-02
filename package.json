@@ -1,0 +1,46 @@
+{
+  "name": "promise.iterate",
+  "version": "0.0.1",
+  "description": "When you need to chain many promises and the order of completion matters",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "promise",
+    "iterate",
+    "iterable",
+    "chain"
+  ],
+  "homepage": "https://github.com/djimloic/promise.iterate#readme",
+  "bugs": {
+    "url": "https://github.com/djimloic/promise.iterate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djimloic/promise.iterate.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Loïc Djimenou",
+  "main": "dist/promise.iterate.js",
+  "types": "dist/promise.iterate.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.16",
+    "@types/node": "^14.14.10",
+    "jest": "^26.6.3",
+    "prettier": "2.2.1",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.2.0-dev.20201202"
+  },
+  "typesVersions": {
+    ">=3.1": {
+      "*": [
+        "ts3.1/*"
+      ]
+    }
+  }
+}
