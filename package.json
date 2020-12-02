@@ -1,27 +1,28 @@
 {
-  "name": "promise.iterate",
+  "name": "promise.consecutively",
   "version": "0.0.1",
   "description": "When you need to chain many promises and the order of completion matters",
   "keywords": [
     "javascript",
     "typescript",
+    "consecutive",
     "promise",
     "iterate",
     "iterable",
     "chain"
   ],
-  "homepage": "https://github.com/djimloic/promise.iterate#readme",
+  "homepage": "https://github.com/djimloic/promise.consecutively#readme",
   "bugs": {
-    "url": "https://github.com/djimloic/promise.iterate/issues"
+    "url": "https://github.com/djimloic/promise.consecutively/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djimloic/promise.iterate.git"
+    "url": "git+https://github.com/djimloic/promise.consecutively.git"
   },
   "license": "Apache-2.0",
   "author": "Loïc Djimenou",
-  "main": "dist/promise.iterate.js",
-  "types": "dist/promise.iterate.d.ts",
+  "main": "dist/promise.consecutively.js",
+  "types": "dist/promise.consecutively.d.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",

@@ -1,1 +1,1 @@
-export * from './promise.iterate';
+export * from './promise.consecutively';

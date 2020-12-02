@@ -1,4 +1,4 @@
-import { promiseIterator } from './promise.iterate';
+import { promiseIterator } from './promise.consecutively';
 
 interface TestInterface {
   i_attr: string;
