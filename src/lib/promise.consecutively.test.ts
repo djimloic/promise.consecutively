@@ -1,4 +1,4 @@
-import { consecutively } from '../src';
+import { consecutively } from './promise.consecutively';
 
 interface TestInterface {
   i_attr: string;
@@ -11,21 +11,21 @@ class TestClass {
 describe('Promise Iterator', () => {
   it('should resolve all promises for interface', () => {
     const p1: Promise<TestInterface> = new Promise<TestInterface>(
-      (resolver, reject) => {
+      (resolver, _reject) => {
         resolver({ i_attr: 'number 1' });
       }
     );
-    const p11: Promise<TestInterface> = p1.then((value) => ({
+    const p11: Promise<TestInterface> = p1.then((_value) => ({
       i_attr: 'number 1, one level down',
-      i_attr2: 11
+      i_attr2: 11,
     }));
     const p2: Promise<TestInterface> = new Promise<TestInterface>(
-      (resolver, reject) => {
+      (resolver, _reject) => {
         resolver({ i_attr: 'number 2' });
       }
     );
     const p3: Promise<TestInterface> = new Promise<TestInterface>(
-      (resolver, reject) => {
+      (resolver, _reject) => {
         resolver({ i_attr: 'number 3' });
       }
     );
@@ -46,27 +46,27 @@ describe('Promise Iterator', () => {
 
   it('should failed at the first rejected promise', () => {
     const p1: Promise<TestClass> = new Promise<TestClass>(
-      (resolver, reject) => {
+      (resolver, _reject) => {
         resolver(new TestClass('number 1'));
       }
     );
     const p11: Promise<TestClass> = p1.then(
-      (value) => new TestClass('number 1, one level down')
+      (_value) => new TestClass('number 1, one level down')
     );
     const p2: Promise<TestClass> = new Promise<TestClass>(
-      (resolver, reject) => {
+      (_resolver, reject) => {
         reject(new TestClass('number 2'));
       }
     );
     const p3: Promise<TestClass> = new Promise<TestClass>(
-      (resolver, reject) => {
+      (resolver, _reject) => {
         resolver(new TestClass('number 3'));
       }
     );
 
     return consecutively
       .iterate([p11, p2, p3], console.log)
-      .then((response) => {
+      .then((_response) => {
         /**
          * This assertion should fail the test,
          * but this promise will not be resolve as p2 is set to fail
