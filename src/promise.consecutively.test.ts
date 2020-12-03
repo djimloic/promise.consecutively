@@ -1,4 +1,4 @@
-import { promiseIterator } from './promise.consecutively';
+import { iterate } from './promise.consecutively';
 
 interface TestInterface {
   i_attr: string;
@@ -30,18 +30,16 @@ describe('Promise Iterator', () => {
       }
     );
 
-    return promiseIterator
-      .iterate([p11, p2, p3], console.log)
-      .then((response) => {
-        // Expect All 3 promises to have been resolved
-        expect(response.length).toEqual(3);
-        // Here, promise p1, then p11 have been resolved
-        expect(response[0].i_attr).toEqual('number 1, one level down');
-        // Here, promise p2 has been resolved
-        expect(response[1].i_attr).toEqual('number 2');
-        // Here, promise p3 has been resolved
-        expect(response[2].i_attr).toEqual('number 3');
-      });
+    return iterate([p11, p2, p3], console.log).then((response) => {
+      // Expect All 3 promises to have been resolved
+      expect(response.length).toEqual(3);
+      // Here, promise p1, then p11 have been resolved
+      expect(response[0].i_attr).toEqual('number 1, one level down');
+      // Here, promise p2 has been resolved
+      expect(response[1].i_attr).toEqual('number 2');
+      // Here, promise p3 has been resolved
+      expect(response[2].i_attr).toEqual('number 3');
+    });
   });
 
   it('should failed at the first rejected promise', () => {
@@ -64,8 +62,7 @@ describe('Promise Iterator', () => {
       }
     );
 
-    return promiseIterator
-      .iterate([p11, p2, p3], console.log)
+    return iterate([p11, p2, p3], console.log)
       .then((response) => {
         /**
          * This assertion should fail the test,
