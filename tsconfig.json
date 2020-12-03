@@ -3,11 +3,12 @@
     "sourceMap": true,
     "outDir": "./dist",
     "declaration": true,
+    "moduleResolution": "node",
+    "types": ["node", "jest"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "ES5",
     "module": "commonjs",
-    "skipDefaultLibCheck": true,
     "lib": [
       "es5",
       "dom",
