@@ -19,6 +19,10 @@ consecutively.iterate([promise_1, promise_2, promise_3, ...., promise_n], callBa
 
 ```
 
+## Demo
+
+See the demo on [stackblitz](https://stackblitz.com/edit/typescript-qnl1h8)
+
 ## How to use in Javascript
 
 In this example, we have three promises that takes some seconds to resolve.
